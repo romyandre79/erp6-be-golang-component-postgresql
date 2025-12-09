@@ -67,18 +67,18 @@ rmdir /s /q build
 REM ===========================
 REM MOVE TO dist/
 REM ===========================
-if not exist ..\erp6-be-golang-component-free-dist\postgresql mkdir ..\erp6-be-golang-component-free-dist\postgresql
-move %ZIPFILE% ..\erp6-be-golang-component-free-dist\postgresql\
+if not exist ..\erp6-be-golang-component-dist\postgresql mkdir ..\erp6-be-golang-component-dist\postgresql
+move %ZIPFILE% ..\erp6-be-golang-component-dist\postgresql\
 
 REM ===========================
 REM GENERATE CHECKSUM
 REM ===========================
-certutil -hashfile ..\erp6-be-golang-component-free-dist\postgresql\%ZIPFILE% SHA256 > ..\erp6-be-golang-component-free-dist\postgresql\checksums_v%new_version%.txt
+certutil -hashfile ..\erp6-be-golang-component-dist\postgresql\%ZIPFILE% SHA256 > ..\erp6-be-golang-component-dist\postgresql\checksums_v%new_version%.txt
 
 REM REMOVE unnecessary lines from certutil output
-powershell -Command "(Get-Content ..\erp6-be-golang-component-free-dist\postgresql\checksums_v%new_version%.txt | Select-Object -Skip 1 | Select-Object -SkipLast 1) | Set-Content ..\erp6-be-golang-component-free-dist\postgresql\checksums_v%new_version%.txt"
+powershell -Command "(Get-Content ..\erp6-be-golang-component-dist\postgresql\checksums_v%new_version%.txt | Select-Object -Skip 1 | Select-Object -SkipLast 1) | Set-Content ..\erp6-be-golang-component-dist\postgresql\checksums_v%new_version%.txt"
 
 echo.
-echo Build complete → ..\erp6-be-golang-component-free-dist\postgresql\%ZIPFILE%
-echo Checksum file → ..\erp6-be-golang-component-free-dist\postgresql\checksums_v%new_version%.txt
+echo Build complete → ..\erp6-be-golang-component-dist\postgresql\%ZIPFILE%
+echo Checksum file → ..\erp6-be-golang-component-dist\postgresql\checksums_v%new_version%.txt
 echo.
