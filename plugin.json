@@ -3,7 +3,7 @@
     "componenttitle": "Database (PostgreSQL)",
     "componentcategoryid": 3,
     "componentclass": "fa-solid fa-database",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "createdby": "Prisma Data Abadi",
     "input": 1,
     "output": 1,
@@ -60,19 +60,22 @@
         {
             "detailtype": "select",
             "lable": "Data Type",
-            "inputtype": "select",
+            "inputtype": "combobox",
             "inputname": "data_type",
             "inputdesc": "Object Type",
             "order": 7,
-            "options": "query,table,stored_procedure,stored_function"
+            "datasourcetype": "List",
+            "datasource": "query,table,stored_procedure,stored_function"
         },
         {
             "detailtype": "text",
             "lable": "Object Name",
-            "inputtype": "text",
+            "inputtype": "combobox",
             "inputname": "object_name",
             "inputdesc": "Table/Func/Proc Name (Required for non-query actions)",
-            "order": 8
+            "order": 8,
+            "datasourcetype": "List",
+            "datasource": "query,table,stored_procedure,stored_function"
         },
         {
             "detailtype": "textarea",
